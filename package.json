@@ -1,0 +1,21 @@
+{
+  "name": "veryspry-server",
+  "version": "1.0.0",
+  "description": "server for personal website, https://veryspry.com",
+  "main": "index.js",
+  "repository": "https://github.com/veryspry/vs-server",
+  "author": "Matt Ehlinger",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "run": "node ./index.js",
+    "watch": "npx nodemon ./index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
