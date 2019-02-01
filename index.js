@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const session = require("express-session");
 const morgan = require("morgan");
 const path = require("path");
 // variables
@@ -12,7 +11,6 @@ const router = require("./routes/index");
 
 // Set up middleware
 app.use(morgan("dev"));
-app.use(session({ secret: "app-secret" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
