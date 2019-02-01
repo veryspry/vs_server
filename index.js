@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
 // variables
-const port = 8080;
+const port = 4000;
 // Components
 const router = require("./routes/index");
 
