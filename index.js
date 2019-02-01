@@ -15,6 +15,7 @@ app.use(express.static(`${__dirname}/../ui/build`));
 
 // Default Routes
 app.get("*", (req, res) => {
+  console.log("__dirname", __dirname);
   res.sendFile(path.join(__dirname, "../", "ui/build/index.html"));
 });
 
