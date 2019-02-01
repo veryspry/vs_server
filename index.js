@@ -5,15 +5,12 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
 // variables
-const port = 4000;
-// Components
-const router = require("./routes/index");
+const port = 8080;
 
 // Set up middleware
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(router);
 app.use(express.static(`${__dirname}/../ui/build`));
 
 // Default Routes
