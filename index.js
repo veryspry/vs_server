@@ -7,12 +7,13 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
 const routes = require("./routes");
+const winston = require("./config/winston");
 // variables
 const port = 8080;
 
 // Set up middleware
 
-app.use(morgan("dev"));
+app.use(morgan("combined", { stream: winston.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //CORS
@@ -24,12 +25,12 @@ app.use((req, res, next) => {
   );
   next();
 });
+
 app.use(express.static(`${__dirname}/../ui/build`));
 app.use(routes);
 
 // Default Routes
 app.get("*", (req, res) => {
-  console.log("__dirname", __dirname);
   res.sendFile(path.join(__dirname, "../", "ui/build/index.html"));
 });
 
