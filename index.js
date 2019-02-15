@@ -7,13 +7,12 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
 const routes = require("./routes");
-const winston = require("./config/winston");
 // variables
 const port = 8080;
 
 // Set up middleware
 
-app.use(morgan("combined", { stream: winston.stream }));
+app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //CORS
