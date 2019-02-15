@@ -20,6 +20,7 @@ router.post("/auth", (req, res) => {
 });
 
 router.post("/contact-form", (req, res) => {
+  console.log("PROCESS.ENV", process.env);
   const defaultEmail = "veryspry.email@gmail.com";
   const { name, email, message } = req.body;
 

@@ -29,8 +29,6 @@ app.use((req, res, next) => {
 app.use(express.static(`${__dirname}/../ui/build`));
 app.use(routes);
 
-console.log("PROCESS.ENV", process.env);
-
 // Default Routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../", "ui/build/index.html"));
