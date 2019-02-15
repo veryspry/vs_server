@@ -1,5 +1,6 @@
 // Read .env file
 require("dotenv").config();
+
 // Packages
 const express = require("express");
 const app = express();
@@ -27,6 +28,8 @@ app.use((req, res, next) => {
 
 app.use(express.static(`${__dirname}/../ui/build`));
 app.use(routes);
+
+console.log("PROCESS.ENV", process.env);
 
 // Default Routes
 app.get("*", (req, res) => {
