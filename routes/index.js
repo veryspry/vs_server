@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport(
     host: "smtp.gmail.com",
     auth: {
       user: process.env.GOOGLE_EMAIL,
-      pass: process.env.GOOGLE_EMAIL_PASSWORD
+      pass: process.env.GOOGLE_APP_PASSWORD
     }
   })
 );
