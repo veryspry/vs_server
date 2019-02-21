@@ -1,5 +1,6 @@
 // Read .env file
 require("dotenv").config();
+
 // Packages
 const express = require("express");
 const app = express();
@@ -13,7 +14,7 @@ const staticDir = "../ui/dist";
 
 // Set up middleware
 
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //CORS
