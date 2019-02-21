@@ -9,6 +9,7 @@ const path = require("path");
 const routes = require("./routes");
 // variables
 const port = 8080;
+const staticDir = "../ui/dist";
 
 // Set up middleware
 
@@ -24,13 +25,12 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use(express.static(`${__dirname}/../ui/build`));
+app.use(express.static(path.join(__dirname, staticDir)));
 app.use(routes);
 
 // Default Routes
 app.get("*", (req, res) => {
-  console.log("__dirname", __dirname);
-  res.sendFile(path.join(__dirname, "../", "ui/build/index.html"));
+  res.sendFile(path.join(__dirname, staticDir, "index.html"));
 });
 
 // Listen
